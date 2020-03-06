@@ -20,12 +20,12 @@
     <body>
         
         <?php
-            include("menu.php");
+            include("inc/php/incs/menu.php");
         ?>
         
         <main class="mt-4 text-black Opacizable" >
             
-            <div id="bg-goosebumps">s</div>
+            <div id="bg-goosebumps"></div>
             
             <div class="container">
                 <section class="mt-4">
