@@ -31,7 +31,7 @@ create table RegistaFilm
 
 )Engine=INNODB;
 
-create table ordine
+create table Ordine
 (
 
 	CodO char(5) not null,
@@ -46,17 +46,32 @@ create table ordine
 create table Elenco_Film
 (
 
-	CodE_L char(5) not null,
+	CodEF char(5) not null,
 	Titolo varchar(50) not null,
 	Descrizione varchar(200) not null,
-
+	Locandina varchar(200) not null,
+	Durata int not null,
 
 	FK_CodGF char(5) not null,
 	FK_CodRF char(5) not null,
 	FOREIGN KEY (FK_CodGF) REFERENCES GenereFilm(CodGF)
 	FOREIGN KEY (FK_CodRF) REFERENCES RegistaFilm(CodRF)
 
-	Primary Key(CodE_L)
+	Primary Key(CodEF)
 
 )Engine=INNODB;
 
+create table Spettacoli
+(
+
+	CodS char(5) not null,
+	Sala char(1) not null,
+	Orario not null,
+	Costo float not null,
+
+	FK_CodEF char(5) not null,
+	FOREIGN KEY (FK_CodEF) REFERENCES Elenco_Film(CodEF)
+
+	Primary Key(CodS)
+
+)Engine=INNODB;
